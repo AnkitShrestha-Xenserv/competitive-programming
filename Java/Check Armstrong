@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+// Program to check if the given number is Armstrong or not
+
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number");
+        String num = String.valueOf(sc.nextInt());
+        int sum=0;
+        String []b=num.split("");
+        for(int i=0;i<num.length();i++){
+                sum=sum+expo(b[i],num.length());
+        }
+        if(sum==Integer.parseInt(num)) {
+            System.out.println("Armstrong");
+        }else{
+            System.out.println("Not Armstrong");
+        }
+    }
+    static int expo(String a,int len){
+        int h=Integer.parseInt(a);
+        int sum=1;
+        for(int i=0;i<len;i++){
+            sum=sum*h;
+        }
+        return sum;
+    }
+}
